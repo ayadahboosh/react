@@ -1,38 +1,29 @@
-import React from "react"; 
- 
-function App() { 
- 
-  const bird1 = new Audio( 
-    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3" 
-     ); 
- 
-  const bird2 = new Audio ( 
-    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3" 
-  ); 
- 
- 
-  function toggle1() { 
-    if (bird1.paused) { 
-      bird1.play(); 
-    } else { 
-      bird1.pause(); 
-    } 
-  }; 
- 
-  function toggle2() { 
-    if (bird2.paused) { 
-      bird2.play(); 
-    } else { 
-      bird2.pause(); 
-    } 
-  }; 
- 
-  return ( 
-    <div className=" audio"> 
-      <button onClick={toggle1}>AUDIO 1</button> 
-      <button onClick={toggle2}> AUDIO2</button> 
-    </div> 
-  ); 
-} 
- 
+import './App.css';
+import Buttons from './Buttons';
+import Header from './Header';
+import Posts from './Posts';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", width: "60%" }}>
+          <div style={{ width: "70%" }}>
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+          </div>
+          <div style={{ width: "30%" }}>
+            <Buttons />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 export default App;
